@@ -1,13 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Rubik', sans-serif; 
+  color:#454360;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.copyright{
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+}
+
+@layer components {
+  .container{
+    @apply !max-w-[1160px] px-4 mx-auto
+  }
+  .inputwrapper{
+    @apply w-full bg-white px-5 py-4 rounded-xl shadow-lg mb-5 outline-none
+  }
+  .input_box{
+    @apply w-[45%] bg-white px-5 py-4 rounded-xl shadow-lg
+  }
+  .nav_active{
+    @apply !text-secondary-color
+  }
+}
+section{
+  padding: 60px 0px;
+  
+}
+.bgimage{
+  background-image: url("https://bolby-react.vercel.app/images/map.svg");
 }

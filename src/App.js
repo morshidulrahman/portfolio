@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Sidebar,Home,About,Blog,Contact,Testimonial,Portfolio,Pricing,Resume,Services} from "./app/components/sections/index";
 
 function App() {
+   const[open,setopen]=useState(false)
+   const handleclick=()=>{
+    setopen(!open)
+   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="bg-[#F9F9FF]">
+        <Sidebar onClick={handleclick} open={open}/>
+        <div className={`md:ml-32 ${open && "ml-32"} duration-300`}>
+            <Home/>
+            <About/>
+            <Services/>
+            <Resume/>
+            <Portfolio/>
+            <Pricing/>
+            <Testimonial/>
+            <Blog/>
+            <Contact/>
+        </div>
+      </div>
   );
 }
 
